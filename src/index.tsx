@@ -7,36 +7,12 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  gql,
 } from "@apollo/client";
 
 const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql/",
   cache: new InMemoryCache(),
 });
-
-client
-  .query({
-    query: gql`
-      query {
-        characters(page: 1) {
-          info {
-            count
-            pages
-            next
-            prev
-          }
-          results {
-            id
-            name
-            status
-            image
-          }
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result));
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
