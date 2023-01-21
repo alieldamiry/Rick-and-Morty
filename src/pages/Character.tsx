@@ -4,8 +4,9 @@ import { useParams } from "react-router";
 import { GET_CHARACTER_BY_ID } from "../graphql/queries";
 import { statusColors } from "../utils/maps";
 import Loading from "../components/Loading";
+import { FC } from "react";
 
-const Character = () => {
+const Character: FC = () => {
   const { characterId } = useParams();
   const { data, loading, error } = useQuery(GET_CHARACTER_BY_ID, {
     variables: { id: characterId },
@@ -26,7 +27,7 @@ const Character = () => {
           Status:{" "}
           <Typography
             component="span"
-            color={statusColors[data?.character?.status] || "unknown"}
+            color={statusColors[data?.character?.status]}
           >
             {data?.character?.status}
           </Typography>
