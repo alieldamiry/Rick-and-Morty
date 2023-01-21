@@ -6,8 +6,8 @@ import CardActions from "@mui/material/CardActions";
 import Grid from "@mui/material/Grid";
 import { NavLink } from "react-router-dom";
 import { Link } from "@mui/material";
-import { statusColors } from "../utils/maps";
-import { characterType } from "../types";
+import { statusColors } from "../../utils/maps";
+import { characterType } from "../../types";
 import { FC } from "react";
 
 type CharacterCardProps = {
@@ -19,7 +19,12 @@ const CharacterCard: FC<CharacterCardProps> = ({ cardData }) => {
     <Grid item xs={12} md={6} lg={3}>
       <Card variant="outlined">
         <CardContent>
-          <Box component="img" src={cardData.image} sx={{ width: "100%" }} />
+          <Box
+            component="img"
+            src={cardData.image}
+            sx={{ width: "100%" }}
+            alt={`${cardData.name} image`}
+          />
           <Typography color="primary.main" sx={{ fontWeight: "bold" }}>
             {cardData.name}
           </Typography>

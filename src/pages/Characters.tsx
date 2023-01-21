@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import Pagination from "@mui/material/Pagination";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import CharacterCard from "../components/CharacterCard";
+import CharacterCard from "../components/CharacterCard/CharacterCard";
 import Container from "@mui/system/Container";
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTERS } from "../graphql/queries";
