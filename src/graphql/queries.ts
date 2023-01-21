@@ -1,7 +1,7 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 
 export const GET_CHARACTERS = gql`
-  query($page: Int!) {
+  query ($page: Int!) {
     characters(page: $page) {
       info {
         count
@@ -14,7 +14,27 @@ export const GET_CHARACTERS = gql`
         name
         status
         image
-        type
+      }
+    }
+  }
+`;
+export const GET_CHARACTER_BY_ID = gql`
+  query ($id: ID!) {
+    character(id: $id) {
+      id
+      name
+      status
+      image
+      type
+      gender
+      species
+      origin {
+        id
+        name
+      }
+      location {
+        id
+        name
       }
     }
   }
