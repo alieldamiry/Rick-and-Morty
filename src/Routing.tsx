@@ -1,6 +1,6 @@
 import Characters from "./pages/Characters/Characters";
 import { Navigate, useRoutes } from "react-router";
-import Character from "./pages/Character";
+import Character from "./pages/Character/Character";
 import Layout from "./components/Layout";
 import Login from "./pages/Login";
 import { useAppSelector } from "./redux/hooks";

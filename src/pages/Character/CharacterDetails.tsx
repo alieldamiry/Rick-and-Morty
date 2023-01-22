@@ -1,19 +1,20 @@
 import { useQuery } from "@apollo/client";
 import { Box, Typography } from "@mui/material";
-import { useParams } from "react-router";
-import { GET_CHARACTER_BY_ID } from "../graphql/queries";
-import { statusColors } from "../utils/maps";
-import Loading from "../components/Loading";
 import { FC } from "react";
+import Loading from "../../components/Loading";
+import { GET_CHARACTER_BY_ID } from "../../graphql/queries";
+import { statusColors } from "../../utils/maps";
 
-const Character: FC = () => {
-  const { characterId } = useParams();
+type CharacterDetailsProps = {
+  characterId: string;
+};
+const CharacterDetails: FC<CharacterDetailsProps> = ({ characterId }) => {
   const { data, loading, error } = useQuery(GET_CHARACTER_BY_ID, {
     variables: { id: characterId },
   });
 
   if (loading) return <Loading />;
-  if (error) return <p>Error : {error.message}</p>;
+  if (error) return <p>{error.message}</p>;
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -57,4 +58,4 @@ const Character: FC = () => {
   );
 };
 
-export default Character;
+export default CharacterDetails;
