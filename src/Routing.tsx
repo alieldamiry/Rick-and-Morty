@@ -1,4 +1,4 @@
-import Characters from "./pages/Characters";
+import Characters from "./pages/Characters/Characters";
 import { Navigate, useRoutes } from "react-router";
 import Character from "./pages/Character";
 import Layout from "./components/Layout";
