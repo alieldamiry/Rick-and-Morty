@@ -13,6 +13,14 @@ const Routing = () => {
       element: <Layout />,
       children: [
         {
+          path: "/",
+          element: isAuth ? (
+            <Navigate to="/characters" />
+          ) : (
+            <Navigate to="/login" />
+          ),
+        },
+        {
           path: "/login",
           element: isAuth ? <Navigate to="/characters" /> : <Login />,
         },
